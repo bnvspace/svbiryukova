@@ -11,6 +11,7 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
 }
 ::-webkit-scrollbar{
     width: 4px;
@@ -357,6 +358,7 @@ body{
     opacity: 0;
     letter-spacing: 100px;
     transition: all .4s ease;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .navigation-links a:hover::before{
     content: attr(data-text);
@@ -365,11 +367,11 @@ body{
 }
 .contact{
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     width: 10%;
     right: 0;
     top: 0;
-    height: 100%;
+    /* height: 100%; */
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -877,6 +879,7 @@ padding-bottom: 40px;
         width: 100%;
         position: relative;
     }
+
     .portfolio-image{
         height: 400px;
         width: 40%;
@@ -1199,6 +1202,8 @@ form button:hover{
     align-items: center;
     text-align: left;
     margin-left: 10px;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 .contact-info-icon-text{
     color: whitesmoke;
@@ -2561,4 +2566,92 @@ for tabs and large phones
         border-radius: 8px;
         transition: all .4s ease;
     }
+}
+
+#navigation-bar img{
+    transform: rotate(-90deg);
+}
+
+.portfolio-image img {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    transition: opacity 0.5s ease;
+}
+
+.portfolio-image .portfolio-first-color {
+    opacity: 0;
+    z-index: 1;
+}
+
+.portfolio-image:hover .portfolio-first {
+    opacity: 0;
+}
+
+.portfolio-image:hover .portfolio-first-color {
+    opacity: 1;
+    z-index: 2;
+}
+#navigation-bar img {
+transition: transform 1s linear; /* Одна полная прокрутка за 1 секунду */
+}
+
+#navigation-bar img:hover {
+animation: rotateLogo 5s linear infinite; /* Бесконечное вращение при наведении */
+}
+
+@keyframes rotateLogo {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+.ins{
+    display: flex;
+    align-items: center;
+    max-width: 195px;
+    width: 100%;
+    justify-content: space-between;
+}
+.portfolio-image-slide {
+    position: relative;
+    /* width: 100%;
+    height: 100%; */
+}
+
+.portfolio-image-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.portfolio-image-slide img.active {
+    opacity: 1;
+    z-index: 1;
+}
+.portfolio-image-slide-2 {
+    position: relative;
+    /* width: 100%;
+    height: 100%; */
+}
+
+.portfolio-image-slide-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.portfolio-image-slide-2 img.active {
+    opacity: 1;
+    z-index: 1;
 }

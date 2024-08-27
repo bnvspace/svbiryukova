@@ -190,3 +190,89 @@ $(function(){
   $('.navigation-close').hover(cursorhover,cursor);
 
 })
+document.addEventListener('DOMContentLoaded', function() {
+  const logo = document.querySelector('#navigation-bar img');
+  const audio = new Audio('path/to/your/sound.mp3'); // Замените 'path/to/your/sound.mp3' на путь к вашему аудиофайлу
+  let isPlaying = false;
+
+  // Запуск аудио при наведении
+  logo.addEventListener('mouseenter', function() {
+      if (!isPlaying) {
+          audio.play();
+      }
+  });
+
+  // Пауза аудио при уходе курсора
+  logo.addEventListener('mouseleave', function() {
+      if (!isPlaying) {
+          audio.pause();
+      }
+  });
+
+  // Воспроизведение/пауза при клике
+  logo.addEventListener('click', function() {
+      if (audio.paused) {
+          audio.play();
+          isPlaying = true;
+      } else {
+          audio.pause();
+          isPlaying = false;
+      }
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.portfolio-image-slide .portfolio-img');
+  let currentIndex = 0;
+
+  function showNextImage() {
+      // Убираем текущий активный класс
+      images[currentIndex].classList.remove('active');
+
+      // Переходим к следующему изображению
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Добавляем активный класс новому изображению
+      images[currentIndex].classList.add('active');
+  }
+
+  const portfolioImage = document.querySelector('.portfolio-image-slide');
+  
+  portfolioImage.addEventListener('mouseenter', function() {
+      showNextImage(); // Показываем следующее изображение при первом наведении
+      
+      // Запускаем интервальный показ изображений
+      portfolioImage.timer = setInterval(showNextImage, 2000); // Изображения сменяются каждые 2 секунды
+  });
+
+  portfolioImage.addEventListener('mouseleave', function() {
+      clearInterval(portfolioImage.timer); // Останавливаем смену изображений при уходе курсора
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.portfolio-image-slide-2 .portfolio-img');
+  let currentIndex = 0;
+
+  function showNextImage() {
+      // Убираем текущий активный класс
+      images[currentIndex].classList.remove('active');
+
+      // Переходим к следующему изображению
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Добавляем активный класс новому изображению
+      images[currentIndex].classList.add('active');
+  }
+
+  const portfolioImage = document.querySelector('.portfolio-image-slide-2');
+  
+  portfolioImage.addEventListener('mouseenter', function() {
+      showNextImage(); // Показываем следующее изображение при первом наведении
+      
+      // Запускаем интервальный показ изображений
+      portfolioImage.timer = setInterval(showNextImage, 2000); // Изображения сменяются каждые 2 секунды
+  });
+
+  portfolioImage.addEventListener('mouseleave', function() {
+      clearInterval(portfolioImage.timer); // Останавливаем смену изображений при уходе курсора
+  });
+});

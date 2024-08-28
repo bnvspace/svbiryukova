@@ -192,7 +192,7 @@ $(function(){
 })
 document.addEventListener('DOMContentLoaded', function() {
   const logo = document.querySelector('#navigation-bar img');
-  const audio = new Audio('path/to/your/sound.mp3'); // Замените 'path/to/your/sound.mp3' на путь к вашему аудиофайлу
+  const audio = new Audio('../song.mp3'); // Замените 'path/to/your/sound.mp3' на путь к вашему аудиофайлу
   let isPlaying = false;
 
   // Запуск аудио при наведении
